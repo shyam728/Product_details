@@ -1,0 +1,114 @@
+
+
+body{
+    background-color: #6794c5;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box{
+    display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 80%;
+     height: 450px;
+     background-color: aqua;
+     
+}
+
+.face-1{
+    width: 50%;
+    height: 450px;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.face-2{
+    width: 50%;
+    height: 450px;
+    background-color: white;
+}
+
+.heading{
+    padding-top: 7%;
+  text-align: center;
+}
+
+.para{
+  text-align: center;
+}
+
+
+.input-box{
+    padding: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.rem-for-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    padding-top: 5px;
+}
+
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+
+.input-icon i{
+    position: absolute;
+   
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+   
+}
+
+.pad{
+    padding: 3%;
+   
+}
+
+.icon {
+    padding: 10px;
+    color: green;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    
+    text-align: center;
+   
+}
+
+.mess-center{
+    text-align: center;
+    margin-top: -8%;
+
+}

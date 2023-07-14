@@ -1,0 +1,49 @@
+
+
+
+.heading-box{
+    background-color: #ffffff;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.side-bar{
+   background-color: #ffffff;
+   height: auto;
+}
+
+.main-bar{
+    background-color: #f2edf3;
+    height: auto;
+}
+
+.main-bar iframe{
+    width: 100%;
+    height: 500px;
+}
+
+.profile{
+
+}
+
+.profile img{
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+   
+}
+
+
+.pf-head{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+

@@ -1,0 +1,126 @@
+<style>
+    .maincontainer {
+      background-color: #95a5a6;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      background-color: white;
+      width: 80%;
+      height: 80%;
+      /* border-top-left-radius:20px; */
+      /* border-bottom-right-radius:20px; */
+      border-radius: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      overflow-y: scroll;
+    }
+    .heading {
+      font-size: 1.5rem;
+      font-family: oswald;
+      font-weight: bold;
+      letter-spacing: 1;
+      padding: 5px;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+    }
+    .headingdiv {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .formdiv {
+      margin: 5px;
+    }
+    .gap{
+      margin-bottom: 10px;
+    }
+    .btnstyle{
+      display: flex;
+      padding: 5px;
+      justify-content: center;
+    }
+  </style>
+<html>
+    <head>
+
+    <!-- bootstrap link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="box">
+              
+
+              
+              <div class="headingdiv">
+                <div style="display: flex;">
+                <div><img class="logo" src="/images/logo.jpg" alt="" /></div>
+                <div class="heading">Product Register</div>
+            </div>
+        
+                <div><a href="/products/productinterface"><img style="width: 40px; height: 40px;" src="/images/addproduct.png" alt="add product"></a></div>
+            </div>
+
+        <% if(data.length==0){ %>
+<%= message %>
+      <%  }else{ %>
+
+
+<table class="table table-striped">
+<tr>
+    <th>#</th>
+    <!-- <th>Product</th> -->
+    <th>Id/Name</th>
+    <th>TYPE/category</th>
+    <th>Descripation</th>
+    <th>Quantity</th>
+    <th> price <br> Offer price</th>
+    <th>picture</th>
+    <th>Edit</th>
+</tr>
+<% data.map((item,i)=>{
+    %>
+    <tr>
+        <td><%= i+1 %></td>
+        <td><%= item.productid %>/ <%= item.productname %></td>
+        <td><%= item.producttypename %> / <%= item.productcatname %></td>
+        <td><%= item.description %></td>
+        <td><%= item.quantity %>/ <%= item.quanitytype %></td>
+        <td><s><%= item.price %> </s> <%= item.offer %></td>
+        <td><a href="/products/displaypictureforedit?productid=<%=item.productid%> &productname=<%=item.productname %> &picture=<%=item.productpicture%> " style="text-decoration: none;"><img src="/images/<%= item.productpicture %>" style="width: 60px;height: 60px; border-radius: 30px;"></a></td>
+        <td><a href="/products/displayforedit?productid=<%=item.productid%>" style="text-decoration: none;"><img src="/images/edit.png" style="width: 40px;height: 40px; ;"></a></td>
+
+    </tr>
+    
+<% }) %>
+</table>
+
+
+
+  <% }
+
+%>
+</div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,212 @@
+<style>
+  .maincontainer {
+    background-color: #95a5a6;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    background-color: white;
+    width: 50%;
+    height: auto;
+    /* border-top-left-radius:20px; */
+    /* border-bottom-right-radius:20px; */
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .heading {
+    font-size: 1.5rem;
+    font-family: oswald;
+    font-weight: bold;
+    letter-spacing: 1;
+    padding: 5px;
+  }
+  .logo {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
+  .headingdiv {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .formdiv {
+    margin: 5px;
+  }
+  .gap{
+    margin-bottom: 10px;
+  }
+  .btnstyle{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+  }
+  .img-head{
+    display: flex;
+  }
+</style>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/javascripts/project.js"></script>
+  </head>
+  <body>
+    <form action="/products/productsubmit" enctype="multipart/form-data" method="post">
+      <div class="maincontainer">
+        <div class="box">
+          <div class="headingdiv">
+            <div class="img-head">
+            <div><img class="logo" src="/images/logo.jpg" alt="" /></div>
+            <div class="heading">Product Register</div>
+          </div>
+          <div><a href="/products/fetch_all_product" style="text-decoration: none;"><img src="/images/display.png" style="width: 40px; " alt=""></a></div>
+          </div>
+          <div class="formdiv">
+            <div class="row gap">
+              <div class="col-md-12">
+                <input required
+                  type="text"
+                  class="form-control"
+                  name="productname"
+                  placeholder="product name..."
+                />
+              </div>
+            </div>
+            <div class="row gap">
+              <div class="col-md-6">
+              
+
+
+                <select required class="form-select" id="producttypeid" name="producttypeid" aria-label="Default select example">
+                  <option selected>--Select Type--</option>
+                 
+
+                  
+                </select>
+              </div>
+              <div class="col-md-6">
+              
+
+
+
+                <select required class="form-select" id="productcatid" name="productcatid" aria-label="Default select example">
+                  <option selected>--Select category--</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row gap">
+                <div class="col-md-12">
+                  <input required
+                    type="text"
+                    class="form-control"
+                    name="description"
+                    placeholder="Description..."
+                  />
+                </div>
+              </div>
+          
+
+              <div class="row gap">
+                <div class="col-md-6">
+                  <input required
+                    type="text"
+                    class="form-control"
+                    name="price"
+                    placeholder="product price"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input required
+                    type="text"
+                    class="form-control"
+                    name="offer"
+                    placeholder="product Offer"
+                  />
+                </div>
+              </div>
+
+
+              <div class="row gap">
+                <div class="col-md-6">
+                  <input required
+                    type="text"
+                    class="form-control"
+                    name="quantity"
+                    placeholder="Quantity"
+                  />
+                </div>
+                <div class="col-md-6">
+                    <select required class="form-select" name="quanitytype" aria-label="Default select example">
+                        <option selected>Quantity Type</option>
+                        <option >kg</option>
+                        <option >m</option>
+                        <option >ml</option>
+                        <option >ltr</option>
+                        <option >unit</option>
+
+                        
+                      </select>
+                </div>
+              </div>
+
+<div class="row gap">
+<div class="col-md-12">
+  <div class="mb-3">
+    <label for="formFile" name="productpicture" class="form-label">Upload Product Images</label>
+    <input required class="form-control" type="file" id="formFile" name="picture">
+  </div>
+</div>
+</div>
+
+<div class="row gap">
+  <div class="col-md-6 btnstyle">
+    <button style="width: 90%;" type="submit" class="btn btn-primary">Submit</button>
+
+  </div>
+  <div class="col-md-6 btnstyle">
+    <button style="width: 90%;" type="reset" class="btn btn-primary">Reset</button>
+
+  </div>
+</div>
+
+
+<div class="row gap" >
+  <div class="col-md-12 ">
+<h4 style="text-align: center;"><%= message %></h4>
+  </div>
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
